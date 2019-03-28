@@ -9,6 +9,12 @@
   <strong>Number of pages:</strong>
   <%= @book.number_of_pages %>
 </p>
-
+<h2>コメント一覧</h2>
+<ul>
+<% @image.image_comment.each do |image_comment|%>
+<li><%= image_comment.comment %>
+(<i><%= image_comment.user.email %></i>)</li>
+<% end %>
+</ul>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
